@@ -1,0 +1,26 @@
+-- CATEGORIAS
+INSERT INTO tb_categoria (id, descricao) VALUES (1, 'Curso');
+INSERT INTO tb_categoria (id, descricao) VALUES (2, 'Oficina');
+
+-- ATIVIDADES
+INSERT INTO tb_atividade (id, nome, descricao, preco, categoria_id) VALUES (1,'Curso de HTML','Aprenda HTML de forma prática',80.00,1);
+INSERT INTO tb_atividade (id, nome, descricao, preco, categoria_id) VALUES (2,'Oficina de Github','Controle versões de seus projetos',50.00, 2);
+
+-- BLOCOS
+INSERT INTO tb_bloco (id, inicio, fim, atividade_id) VALUES (1,TIMESTAMP '2017-09-25 08:00:00',TIMESTAMP '2017-09-25 11:00:00',1);
+INSERT INTO tb_bloco (id, inicio, fim, atividade_id) VALUES (2,TIMESTAMP '2017-09-25 14:00:00',TIMESTAMP '2017-09-25 18:00:00',2);
+INSERT INTO tb_bloco (id, inicio, fim, atividade_id) VALUES (3,TIMESTAMP '2017-09-26 08:00:00',TIMESTAMP '2017-09-26 11:00:00',2);
+
+-- PARTICIPANTES
+INSERT INTO tb_participante (id, nome, email) VALUES (1, 'José Silva', 'jose@gmail.com');
+INSERT INTO tb_participante (id, nome, email) VALUES (2, 'Tiago Faria', 'tiago@gmail.com');
+INSERT INTO tb_participante (id, nome, email) VALUES (3, 'Maria do Rosário', 'maria@gmail.com');
+INSERT INTO tb_participante (id, nome, email) VALUES (4, 'Teresa Silva', 'teresa@gmail.com');
+
+-- RELACIONAMENTO MANY-TO-MANY
+INSERT INTO tb_participante_atividade (participante_id, atividade_id) VALUES (1, 1);
+INSERT INTO tb_participante_atividade (participante_id, atividade_id) VALUES (1, 2);
+INSERT INTO tb_participante_atividade (participante_id, atividade_id) VALUES (2, 1);
+INSERT INTO tb_participante_atividade (participante_id, atividade_id) VALUES (3, 1);
+INSERT INTO tb_participante_atividade (participante_id, atividade_id) VALUES (3, 2);
+INSERT INTO tb_participante_atividade (participante_id, atividade_id) VALUES (4, 2);
