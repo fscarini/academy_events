@@ -34,9 +34,6 @@ public class Bloco {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Instant getInicio() {
         return inicio;
